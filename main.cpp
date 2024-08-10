@@ -25,7 +25,7 @@ Problem define_problem() {
          {"chair at middle room", "at middle room", "on floor"},
          {"at bananas", "on chair"},
          {"at middle room", "on floor"}},
-        {"push chair from door to midle room",
+        {"push chair from door to middle room",
          {"chair at door", "at door"},
          {"chair at middle room", "at middle room"},
          {"chair at door", "at door"}},

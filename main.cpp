@@ -6,12 +6,8 @@ Problem define_problem();
 
 int main() {
     Problem problem = define_problem();
-    std::vector<std::string> start = problem.start;
-    std::vector<std::string> finish = problem.finish;
-    std::vector<Operation> operators = problem.operators;
-    std::vector<std::string> actions = gps(start, finish, operators);
 
-    for (auto &action : actions) {
+    for (auto &action : gps(problem.start, problem.finish, problem.operators)) {
         std::cout << action << std::endl;
     }
     return 0;
@@ -24,7 +20,7 @@ Problem define_problem() {
 
     std::vector<std::string> finish = {"not hungry"};
 
-    std::vector<Operation> ops = {
+    std::vector<Operation> operators = {
         {"climb on chair",
          {"chair at middle room", "at middle room", "on floor"},
          {"at bananas", "on chair"},
@@ -47,5 +43,5 @@ Problem define_problem() {
          {"empty handed", "not hungry"},
          {"has bananas", "hungry"}}};
 
-    return {start, finish, ops};
+    return {start, finish, operators};
 }

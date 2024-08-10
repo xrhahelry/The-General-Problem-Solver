@@ -2,25 +2,27 @@
 #include "problem.hpp"
 #include <iostream>
 
+using namespace std;
+
 Problem define_problem();
 
 int main() {
     Problem problem = define_problem();
 
     for (auto &action : gps(problem.start, problem.finish, problem.operators)) {
-        std::cout << action << std::endl;
+        cout << action << endl;
     }
     return 0;
 }
 
 Problem define_problem() {
-    std::vector<std::string> start = {
+    vector<string> start = {
         "at door", "on floor", "has ball", "hungry", "chair at door",
     };
 
-    std::vector<std::string> finish = {"not hungry"};
+    vector<string> finish = {"not hungry"};
 
-    std::vector<Operation> operators = {
+    vector<Operation> operators = {
         {"climb on chair",
          {"chair at middle room", "at middle room", "on floor"},
          {"at bananas", "on chair"},
